@@ -85,10 +85,18 @@ console.log('idString :>> ', idString);
 
 console.warn("Partie 5 - Generics")
 
-import { identity, identity2 } from './docs/generics'
+import { GenericNumber, identity, identity2 } from './docs/generics'
 
 const id1 = identity(3);
 
 console.log('id1 :>> ', id1);
 
 const id2 = identity2<string>('hello');
+
+let nb = new GenericNumber<number>()
+nb.zeroValue
+nb.add = function (x,y) {
+    return x + y
+}
+
+console.log(nb.add(3, 5));
